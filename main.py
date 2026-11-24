@@ -1,6 +1,8 @@
 """The Vacuum's Alibi: one line, 200 characters or fewer.
 
-A robot vacuum's deadpan excuse for the spot it missed.
+A robot vacuum's deadpan excuse for the spot it missed. The
+alibi escalates from a sensor log to a crime scene, then closes
+on the mop as legal counsel — deadpan to the last word.
 Writes the line to /output/entry.txt. Python standard library
 only, fully deterministic.
 """
@@ -10,13 +12,15 @@ import os
 LINE = (
     "I did not miss that spot. My sensors logged it as a crime scene: "
     "one sock, zero dust, and a crumb that looked back. "
-    "I left it for the mop."
+    "My lawyer is the mop."
 )
 
 
 def main() -> None:
     assert "\n" not in LINE and "\r" not in LINE, "entry must be a single line"
     assert LINE.strip(), "entry must not be only whitespace"
+    assert LINE == LINE.strip(), "entry must not start or end with whitespace"
+    assert LINE.endswith("."), "entry must end with a full stop"
     assert 1 <= len(LINE) <= 200, f"entry must be 1-200 chars, got {len(LINE)}"
     os.makedirs("/output", exist_ok=True)
     with open("/output/entry.txt", "w", encoding="utf-8") as f:

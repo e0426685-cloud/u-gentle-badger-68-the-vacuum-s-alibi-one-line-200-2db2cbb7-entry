@@ -7,7 +7,7 @@
 One line, 200 characters or fewer: a robot vacuum's deadpan alibi for the spot it missed.
 
 ```
-I did not miss that spot. My sensors logged it as a crime scene: one sock, zero dust, and a crumb that looked back. I left it for the mop.
+I did not miss that spot. My sensors logged it as a crime scene: one sock, zero dust, and a crumb that looked back. My lawyer is the mop.
 ```
 
 ## Run it
